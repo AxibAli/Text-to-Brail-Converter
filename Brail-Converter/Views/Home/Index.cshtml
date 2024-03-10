@@ -1,0 +1,40 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+@* <h2>Convert Text to Braille</h2>
+
+<form method="post" action="/Home/ConvertToBraille">
+    <label for="inputText">Enter Text:</label>
+    <input type="text" name="inputText" id="inputText" required>
+    <button type="submit">Convert</button>
+</form>
+
+@if (!string.IsNullOrEmpty(ViewBag.BrailleText))
+{
+    <h3>Input Text: @ViewBag.InputText</h3>
+    <h3>Braille Text: @ViewBag.BrailleText</h3>
+} *@
+
+<h2>Convert Text to Braille</h2>
+
+<form method="post" action="/Home/ConvertToBraille">
+    <label for="inputText">Enter Text:</label>
+    <input type="text" name="inputText" id="inputText" required>
+
+    <label for="selectedLanguage">Select Language:</label>
+    <select name="selectedLanguage" id="selectedLanguage" required>
+        <option value="english">English</option>
+        <option value="urdu">Urdu</option>
+       @*  <option value="sindhi">Sindhi</option>
+        <option value="punjabi">Punjabi</option> *@
+    </select>
+
+    <button type="submit">Convert</button>
+</form>
+
+@if (!string.IsNullOrEmpty(ViewBag.BrailleText))
+{
+    <h3>Input Text: @ViewBag.InputText</h3>
+    <h3>Braille Text: @ViewBag.BrailleText</h3>
+}
